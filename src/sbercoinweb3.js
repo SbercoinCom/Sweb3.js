@@ -7,7 +7,7 @@ const Encoder = require('./formatters/encoder');
 const Decoder = require('./formatters/decoder');
 const Utils = require('./utils');
 
-class Seb3 {
+class Sweb3 {
   /**
    * Sweb3 constructor.
    * @param {string|Sweb3Provider} provider Either URL string to create HttpProvider or a Sweb3 compatible provider.
