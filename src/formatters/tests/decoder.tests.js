@@ -10,12 +10,12 @@ describe('Decoder', () => {
   describe('toSbercoinAddress()', () => {
     it('returns the converted sbercoin.com address', () => {
       assert.equal(
-        Decoder.toSbercoinAddress('17e7888aa7412a735f336d2f6d784caefabb6fa3', false),
-        'S6dUXM8WjS9fF6UianfP5vQDtu7ZSzuB2z',
+        Decoder.toSbercoinAddress('fc747e1a9e798d33b8ac7d0d9a07eebf76f05bed', true),
+        'SkJrsEKJse29dZGGcjNeFp1NzsXhEB7829',
       );
       assert.equal(
-        Decoder.toSbercoinAddress('2a2ad24849bc061f0f7abee243ebdb584b0d11f1', true),
-        'S8J3J4EHk4SrSE1nV1sdtFHT18ciGEg19J',
+        Decoder.toSbercoinAddress('e3cd00a15e8168a80f5be54f4835fefb58be35ec', true),
+        'Si4W1D2NcE7VhLpb3h7QPx2JcTwk9XSyf6',
       );
     });
 
@@ -25,7 +25,7 @@ describe('Decoder', () => {
     });
 
     it('throws if hexAddress is not hex', () => {
-      expect(() => Decoder.toSbercoinAddress('S6dUXM8WjS9fF6UianfP5vQDtu7ZSzuB2z')).to.throw();
+      expect(() => Decoder.toSbercoinAddress('SkJrsEKJse29dZGGcjNeFp1NzsXhEB7829')).to.throw();
     });
   });
 

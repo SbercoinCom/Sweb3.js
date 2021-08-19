@@ -151,46 +151,46 @@ describe('Encoder', () => {
   describe('addressToHex()', () => {
     it('should convert a sbercoin.com address', () => {
       assert.equal(
-        Encoder.addressToHex('bKjn4fStBaAtwGiwueJf9qFxgpbAvf1xAy'),
-        '00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3',
+        Encoder.addressToHex('SkJrsEKJse29dZGGcjNeFp1NzsXhEB7829'),
+        '000000000000000000000000fc747e1a9e798d33b8ac7d0d9a07eebf76f05bed',
       );
       assert.equal(
-        Encoder.addressToHex('qKoxAUEQ1Nj6anwes6ZjRGQ7aqdiyUeat8'),
-        '00000000000000000000000018b1a0dc71e4de23c20dc4163f9696d2d9d63868',
+        Encoder.addressToHex('Si4W1D2NcE7VhLpb3h7QPx2JcTwk9XSyf6'),
+        '000000000000000000000000e3cd00a15e8168a80f5be54f4835fefb58be35ec',
       );
       assert.equal(
-        Encoder.addressToHex('qTumW1fRyySwmoPi12LpFyeRj8W6mzUQA3'),
-        '000000000000000000000000718c3ab4d6a28c92c570a1c12bfc17c3512bb05b',
+        Encoder.addressToHex('Sgr728cpEDHhFhnCUskFtnU4i6jcibwmYE'),
+        '000000000000000000000000d67cb2f1db3e2d799d967742cf6c0433d9f8a2c3',
       );
     });
 
     it('should pad a hex address', () => {
       assert.equal(
-        Encoder.addressToHex('17e7888aa7412a735f336d2f6d784caefabb6fa3'),
-        '00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3',
+        Encoder.addressToHex('fc747e1a9e798d33b8ac7d0d9a07eebf76f05bed'),
+        '000000000000000000000000fc747e1a9e798d33b8ac7d0d9a07eebf76f05bed',
       );
       assert.equal(
-        Encoder.addressToHex('18b1a0dc71e4de23c20dc4163f9696d2d9d63868'),
-        '00000000000000000000000018b1a0dc71e4de23c20dc4163f9696d2d9d63868',
+        Encoder.addressToHex('e3cd00a15e8168a80f5be54f4835fefb58be35ec'),
+        '000000000000000000000000e3cd00a15e8168a80f5be54f4835fefb58be35ec',
       );
       assert.equal(
-        Encoder.addressToHex('718c3ab4d6a28c92c570a1c12bfc17c3512bb05b'),
-        '000000000000000000000000718c3ab4d6a28c92c570a1c12bfc17c3512bb05b',
+        Encoder.addressToHex('d67cb2f1db3e2d799d967742cf6c0433d9f8a2c3'),
+        '000000000000000000000000d67cb2f1db3e2d799d967742cf6c0433d9f8a2c3',
       );
     });
 
     it('can handle an address with a hex prefix', () => {
       assert.equal(
-        Encoder.addressToHex('0x17e7888aa7412a735f336d2f6d784caefabb6fa3'),
-        '00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3',
+        Encoder.addressToHex('0xfc747e1a9e798d33b8ac7d0d9a07eebf76f05bed'),
+        '000000000000000000000000fc747e1a9e798d33b8ac7d0d9a07eebf76f05bed',
       );
       assert.equal(
-        Encoder.addressToHex('0x18b1a0dc71e4de23c20dc4163f9696d2d9d63868'),
-        '00000000000000000000000018b1a0dc71e4de23c20dc4163f9696d2d9d63868',
+        Encoder.addressToHex('0xe3cd00a15e8168a80f5be54f4835fefb58be35ec'),
+        '000000000000000000000000e3cd00a15e8168a80f5be54f4835fefb58be35ec',
       );
       assert.equal(
-        Encoder.addressToHex('0x718c3ab4d6a28c92c570a1c12bfc17c3512bb05b'),
-        '000000000000000000000000718c3ab4d6a28c92c570a1c12bfc17c3512bb05b',
+        Encoder.addressToHex('0xd67cb2f1db3e2d799d967742cf6c0433d9f8a2c3'),
+        '000000000000000000000000d67cb2f1db3e2d799d967742cf6c0433d9f8a2c3',
       );
     });
 
@@ -450,11 +450,11 @@ describe('Encoder', () => {
     const { abi } = ContractMetadata.EventFactory;
 
     it('constructs the datahex', () => {
-      const args = ['bKjn4fStBaAtwGiwueJf9qFxgpbAvf1xAy', 'Hello World', ['a', 'b', 'c'], '0xc350', '0xc738'];
+      const args = ['SkJrsEKJse29dZGGcjNeFp1NzsXhEB7829', 'Hello World', ['a', 'b', 'c'], '0xc350', '0xc738'];
       const dataHex = Encoder.constructData(abi, 'createTopic', args);
 
       const funcHash = 'd0613dce';
-      const oracle = '00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3';
+      const oracle = '000000000000000000000000fc747e1a9e798d33b8ac7d0d9a07eebf76f05bed';
       const name = '48656c6c6f20576f726c64000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000';
       const resultNames = '6100000000000000000000000000000000000000000000000000000000000000620000000000000000000000000000000000000000000000000000000000000063000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000';
       const bettingEndBlock = '000000000000000000000000000000000000000000000000000000000000C350';
@@ -509,7 +509,7 @@ describe('Encoder', () => {
         ['49837717385', 1234567890, '0x87A23'],
         true,
         ['49837717385', 1234567890, '0x87A23'],
-        ['bKjn4fStBaAtwGiwueJf9qFxgpbAvf1xAy', 'qKoxAUEQ1Nj6anwes6ZjRGQ7aqdiyUeat8'],
+        ['SkJrsEKJse29dZGGcjNeFp1NzsXhEB7829', 'Si4W1D2NcE7VhLpb3h7QPx2JcTwk9XSyf6'],
       ];
       const dataHex = Encoder.constructData([methodObj], 'test', args);
 
@@ -522,7 +522,7 @@ describe('Encoder', () => {
       const fifth = '0000000000000000000000000000000000000000000000000000000000000160';
 
       const secondData = '00000000000000000000000000000000000000000000000000000000000000030000000000000000000000000000000000000000000000000000000B9A8F378900000000000000000000000000000000000000000000000000000000499602D20000000000000000000000000000000000000000000000000000000000087A23';
-      const fifthData = '000000000000000000000000000000000000000000000000000000000000000200000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa300000000000000000000000018b1a0dc71e4de23c20dc4163f9696d2d9d63868';
+      const fifthData = '0000000000000000000000000000000000000000000000000000000000000002000000000000000000000000fc747e1a9e798d33b8ac7d0d9a07eebf76f05bed000000000000000000000000e3cd00a15e8168a80f5be54f4835fefb58be35ec';
 
       assert.equal(
         dataHex,
@@ -534,6 +534,58 @@ describe('Encoder', () => {
           .concat(fifth)
           .concat(secondData)
           .concat(fifthData)
+          .toLowerCase(),
+      );
+    });
+
+    it('constructs the datahex for string types', () => {
+      const methodObj = {
+        constant: true,
+        inputs: [
+          {
+            name: '_first',
+            type: 'string',
+          },
+          {
+            name: '_second',
+            type: 'uint256',
+          },
+          {
+            name: '_third',
+            type: 'string',
+          },
+        ],
+        name: 'test',
+        outputs: [
+
+        ],
+        payable: false,
+        stateMutability: 'pure',
+        type: 'function',
+      };
+      const args = [
+        'Hello Sbercoin.com network! Enjoy it.',
+        1,
+        'Other String'
+      ];
+      const dataHex = Encoder.constructData([methodObj], 'test', args);
+
+      const funcHash = Encoder.objToHash(methodObj, true);
+
+      const first = '0000000000000000000000000000000000000000000000000000000000000060';
+      const second = '0000000000000000000000000000000000000000000000000000000000000001';
+      const third = '00000000000000000000000000000000000000000000000000000000000000c0'
+      const firstData = '000000000000000000000000000000000000000000000000000000000000002548656c6c6f2053626572636f696e2e636f6d206e6574776f726b2120456e6a6f792069742e000000000000000000000000000000000000000000000000000000'
+      const secondData = '000000000000000000000000000000000000000000000000000000000000000c4f7468657220537472696e670000000000000000000000000000000000000000';
+
+      assert.equal(
+        dataHex,
+        funcHash
+          .concat(first)
+          .concat(second)
+          .concat(third)
+          .concat(firstData)
+          .concat(secondData)
           .toLowerCase(),
       );
     });
@@ -553,11 +605,11 @@ describe('Encoder', () => {
         stateMutability: 'view',
         type: 'function',
       };
-      const args = ['bKjn4fStBaAtwGiwueJf9qFxgpbAvf1xAy'];
+      const args = ['SkJrsEKJse29dZGGcjNeFp1NzsXhEB7829'];
       const dataHex = Encoder.constructData([methodObj], 'testMethod', args);
 
       const funcHash = Encoder.objToHash(methodObj, true);
-      const param = '00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3';
+      const param = '000000000000000000000000fc747e1a9e798d33b8ac7d0d9a07eebf76f05bed';
       assert.equal(dataHex, funcHash.concat(param));
     });
 
@@ -576,12 +628,12 @@ describe('Encoder', () => {
         stateMutability: 'view',
         type: 'function',
       };
-      const args = [['bKjn4fStBaAtwGiwueJf9qFxgpbAvf1xAy', 'qKoxAUEQ1Nj6anwes6ZjRGQ7aqdiyUeat8']];
+      const args = [['SkJrsEKJse29dZGGcjNeFp1NzsXhEB7829', 'Si4W1D2NcE7VhLpb3h7QPx2JcTwk9XSyf6']];
       const dataHex = Encoder.constructData([methodObj], 'testMethod', args);
 
       const funcHash = Encoder.objToHash(methodObj, true);
-      const param1 = '00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3';
-      const param2 = '00000000000000000000000018b1a0dc71e4de23c20dc4163f9696d2d9d63868';
+      const param1 = '000000000000000000000000fc747e1a9e798d33b8ac7d0d9a07eebf76f05bed';
+      const param2 = '000000000000000000000000e3cd00a15e8168a80f5be54f4835fefb58be35ec';
       assert.equal(dataHex, funcHash.concat(param1).concat(param2));
     });
 
@@ -601,14 +653,14 @@ describe('Encoder', () => {
         type: 'function',
       };
 
-      const args = [['bKjn4fStBaAtwGiwueJf9qFxgpbAvf1xAy', 'qKoxAUEQ1Nj6anwes6ZjRGQ7aqdiyUeat8']];
+      const args = [['SkJrsEKJse29dZGGcjNeFp1NzsXhEB7829', 'Si4W1D2NcE7VhLpb3h7QPx2JcTwk9XSyf6']];
       const dataHex = Encoder.constructData([methodObj], 'test', args);
 
       const funcHash = Encoder.objToHash(methodObj, true);
       const dataLoc = '0000000000000000000000000000000000000000000000000000000000000020';
       const dataLen = '0000000000000000000000000000000000000000000000000000000000000002';
-      const param1 = '00000000000000000000000017e7888aa7412a735f336d2f6d784caefabb6fa3';
-      const param2 = '00000000000000000000000018b1a0dc71e4de23c20dc4163f9696d2d9d63868';
+      const param1 = '000000000000000000000000fc747e1a9e798d33b8ac7d0d9a07eebf76f05bed';
+      const param2 = '000000000000000000000000e3cd00a15e8168a80f5be54f4835fefb58be35ec';
       assert.equal(dataHex, funcHash.concat(dataLoc).concat(dataLen).concat(param1).concat(param2));
     });
 
