@@ -42,11 +42,6 @@
     "test": "mocha --recursive **/*.tests.js",
     "test:cleanenv": "mocha --recursive **/*.tests.js --cleanenv"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm run lint:fix"
-    }
-  },
   "homepage": "https://sbercoin.com/",
   "bugs": {
     "url": "https://github.com/SbercoinCom/Sweb3.js/issues"

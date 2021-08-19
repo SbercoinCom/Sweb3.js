@@ -313,7 +313,7 @@ class Encoder {
         dataLoc += 1;
       }
     });
-    let hexStringArgs = [];
+    const hexStringArgs = [];
     let shift = 0;
 
     _.each(methodObj.inputs, (item, index) => {
@@ -323,19 +323,18 @@ class Encoder {
       if (type === Constants.BYTES) {
         throw Error('dynamics bytes conversion not implemented.');
       } else if (type === Constants.STRING) {
-        //throw Error('dynamic string conversion not implemented.');
+        // throw Error('dynamic string conversion not implemented.');
         let data = '';
         const startBytesLoc = (dataLoc + shift) * 32;
         hex = this.uintToHex(startBytesLoc);
         dataHexArr[index] = hex;
 
         data += this.uintToHex(args[index].length);
-        let hexString = this.stringToHex(args[index], Math.ceil(args[index].length / 32) * 64);
+        const hexString = this.stringToHex(args[index], Math.ceil(args[index].length / 32) * 64);
         data += hexString;
         shift += 1 + hexString.length / 64 | 0;
 
-        hexStringArgs.push(data); 
-        
+        hexStringArgs.push(data);
       } else if (type.match(Constants.REGEX_DYNAMIC_ARRAY)) { // dynamic types
         let data = '';
 
